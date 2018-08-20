@@ -36,34 +36,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let color = ['red', 'orange', 'yellow', 'green', 'blue', 'violet', 'indigo']
 
-h1.addEventListener("dblclick", function() {
-    let ranCol = randomize();
-    h1.style.color = ranCol;
+    h1.addEventListener("dblclick", function () {
+        let ranCol = randomize();
+        h1.style.color = ranCol;
+    });
+    h2.addEventListener("dblclick", function () {
+        let ranCol = randomize();
+        h2.style.color = ranCol;
+    });
+    h3.addEventListener("dblclick", function () {
+        let ranCol = randomize();
+        h3.style.color = ranCol;
+    });
+    h4.addEventListener("dblclick", function () {
+        let ranCol = randomize();
+        h4.style.color = ranCol;
+    });
+    h5.addEventListener("dblclick", function () {
+        let ranCol = randomize();
+        h5.style.color = ranCol;
+    });
+    h6.addEventListener("dblclick", function () {
+        let ranCol = randomize();
+        h6.style.color = ranCol;
+    });
+    function randomize() {
+        return color[Math.floor(Math.random() * color.length)]
+    };
+
+    let item = 0;
+    let butt1 = document.getElementsByClassName('ClickMe');
+    let buttDiv = document.getElementsByClassName('buttDiv');
+    let bye = document.getElementsByClassName('bye')
+    butt1[0].addEventListener('click', function () {
+        item++
+        let buttonText = document.createTextNode('This is list item ' + item);
+        let listItem = document.createElement('div');
+        listItem.setAttribute("id", "bye");
+        buttDiv[0].appendChild(listItem)
+        listItem.appendChild(buttonText)
+    });
+    
+    bye.addEventListener("dblclick", function () {
+        buttDiv.removeChild(bye);
+    });
+
+    console.log(bye)
 });
-h2.addEventListener("dblclick", function() {
-    let ranCol = randomize();
-    h2.style.color = ranCol;
-});
-h3.addEventListener("dblclick", function() {
-    let ranCol = randomize();
-    h3.style.color = ranCol;
-});
-h4.addEventListener("dblclick", function() {
-    let ranCol = randomize();
-    h4.style.color = ranCol;
-});
-h5.addEventListener("dblclick", function() {
-    let ranCol = randomize();
-    h5.style.color = ranCol;
-});
-h6.addEventListener("dblclick", function() {
-    let ranCol = randomize();
-    h6.style.color = ranCol;
-});
-function randomize() {
-    return color[Math.floor(Math.random() * color.length)]
-}
-});
+
+
 
 // the div, header and text do not show up before being placed inside a listener.
 
