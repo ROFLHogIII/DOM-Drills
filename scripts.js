@@ -32,6 +32,38 @@ document.addEventListener("DOMContentLoaded", function () {
     div.appendChild(h5);
     div.appendChild(h6);
     document.body.appendChild(div);
+
+
+    let color = ['red', 'orange', 'yellow', 'green', 'blue', 'violet', 'indigo']
+
+h1.addEventListener("dblclick", function() {
+    let ranCol = randomize();
+    h1.style.color = ranCol;
+});
+h2.addEventListener("dblclick", function() {
+    let ranCol = randomize();
+    h2.style.color = ranCol;
+});
+h3.addEventListener("dblclick", function() {
+    let ranCol = randomize();
+    h3.style.color = ranCol;
+});
+h4.addEventListener("dblclick", function() {
+    let ranCol = randomize();
+    h4.style.color = ranCol;
+});
+h5.addEventListener("dblclick", function() {
+    let ranCol = randomize();
+    h5.style.color = ranCol;
+});
+h6.addEventListener("dblclick", function() {
+    let ranCol = randomize();
+    h6.style.color = ranCol;
+});
+function randomize() {
+    return color[Math.floor(Math.random() * color.length)]
+}
 });
 
 // the div, header and text do not show up before being placed inside a listener.
+
