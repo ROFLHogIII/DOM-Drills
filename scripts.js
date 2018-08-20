@@ -67,21 +67,30 @@ document.addEventListener("DOMContentLoaded", function () {
     let item = 0;
     let butt1 = document.getElementsByClassName('ClickMe');
     let buttDiv = document.getElementsByClassName('buttDiv');
-    let bye = document.getElementsByClassName('bye')
-    butt1[0].addEventListener('click', function () {
+
+    function list() {
         item++
         let buttonText = document.createTextNode('This is list item ' + item);
         let listItem = document.createElement('div');
         listItem.setAttribute("id", "bye");
         buttDiv[0].appendChild(listItem)
         listItem.appendChild(buttonText)
-    });
-    
-    bye.addEventListener("dblclick", function () {
-        buttDiv.removeChild(bye);
-    });
+        listItem.addEventListener("click", function (e) {
+            let targetItem = e.target;
+            let ranCol = randomize();
+            targetItem.style.color = ranCol;
+        })
+        listItem.addEventListener('dblclick', function (e) {
+            let targetItem = e.target;
+            targetItem.remove();
 
-    console.log(bye)
+        })
+    }
+
+    butt1[0].addEventListener('click', function () {
+        list()
+
+    });
 });
 
 
