@@ -75,14 +75,12 @@ document.addEventListener("DOMContentLoaded", function () {
         listItem.setAttribute("id", "bye");
         buttDiv[0].appendChild(listItem)
         listItem.appendChild(buttonText)
-        listItem.addEventListener("click", function (e) {
-            let targetItem = e.target;
+        listItem.addEventListener("click", function () {
             let ranCol = randomize();
-            targetItem.style.color = ranCol;
+            listItem.style.color = ranCol;
         })
-        listItem.addEventListener('dblclick', function (e) {
-            let targetItem = e.target;
-            targetItem.remove();
+        listItem.addEventListener('dblclick', function () {
+            listItem.remove();
 
         })
     }
